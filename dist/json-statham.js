@@ -1,10 +1,11 @@
 'use strict';
 
-const extend      = require('extend');
-const FileSystem  = require('./lib/filesystem.js');
-const expand      = require('./lib/expand');
-const Utils       = require('./lib/utils');
-const flatten     = require('./lib/flatten');
+import extend from 'extend';
+import {FileSystem} from './filesystem.js';
+import {expand} from './expand';
+import {Utils} from './utils';
+import {flatten} from './flatten';
+
 const MODE_FLAT   = 'flat';
 const MODE_NESTED = 'nested';
 const MODES       = [MODE_FLAT, MODE_NESTED];
@@ -12,7 +13,7 @@ const MODES       = [MODE_FLAT, MODE_NESTED];
 /**
  * Kick your JSON's ass, with json-statham's help.
  */
-class Statham {
+export class Statham {
 
   /**
    * @return {string}
@@ -276,8 +277,3 @@ class Statham {
     return found;
   }
 }
-
-module.exports.flatten = flatten;
-module.exports.expand  = expand;
-module.exports.expand  = expand;
-module.exports.Statham = Statham;

@@ -1,6 +1,5 @@
-'use strict';
 
-class Utils {
+export class Utils {
 
   /**
    * Used to normalize keys of mixed array and dot-separated string to a single array of undotted strings.
@@ -35,5 +34,3 @@ class Utils {
     return Promise.reject(new Error('Unsupported environment. This method only works on the server (node.js).'));
   }
 }
-
-module.exports = Utils;

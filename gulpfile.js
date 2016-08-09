@@ -1,12 +1,3 @@
-var gulp                  = require('gulp');
-var conventionalChangelog = require('gulp-conventional-changelog');
-
-gulp.task('changelog', function() {
-  return gulp.src('CHANGELOG.md', {
-      buffer: false
-    })
-    .pipe(conventionalChangelog({
-      preset: 'angular'
-    }))
-    .pipe(gulp.dest('./'));
-});
+// all gulp tasks are located in the ./build/tasks directory
+// gulp configuration is in files in ./build directory
+require('require-dir')('build/tasks');

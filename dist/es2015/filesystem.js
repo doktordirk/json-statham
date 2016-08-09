@@ -1,10 +1,10 @@
 'use strict';
 
-let fs      = require('fs');
-let path    = require('path');
-let mkdirp  = require('mkdirp');
+import fs from 'fs';
+import path from 'path';
+import mkdirp from 'mkdirp';
 
-class FileSystem {
+export let FileSystem = class FileSystem {
   static fromFile(fileName) {
     return new Promise((resolve, reject) => {
       fs.readFile(fileName, 'utf8', (error, data) => {
@@ -25,15 +25,6 @@ class FileSystem {
     });
   }
 
-  /**
-   * Save data to file.
-   *
-   * @param {String}  filePath    Path of file to save to.
-   * @param {Boolean} createPath  If true, creates path to file.
-   * @param {{}}      data        Data to save.
-   *
-   * @returns {Promise}
-   */
   static save(filePath, createPath, data) {
     return new Promise((resolve, reject) => {
       if (typeof filePath === 'undefined') {
@@ -59,6 +50,4 @@ class FileSystem {
       });
     });
   }
-}
-
-module.exports = FileSystem;
+};

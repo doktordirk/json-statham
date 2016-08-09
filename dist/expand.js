@@ -7,7 +7,7 @@
  *
  * @return {{}}
  */
-module.exports = function expand(source) {
+export function expand(source) {
   let destination = {};
 
   Object.getOwnPropertyNames(source).forEach(flatKey => {

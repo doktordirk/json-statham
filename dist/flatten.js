@@ -9,7 +9,7 @@
  *
  * @return {{}}
  */
-module.exports = function flatten (source, basePath, target) {
+export function flatten (source, basePath, target) {
   basePath = basePath || '';
   target   = target || {};
 

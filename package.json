@@ -2,7 +2,8 @@
   "name": "json-statham",
   "version": "1.6.0",
   "description": "Kick your JSON's ass, with json-statham's help.",
-  "main": "index.js",
+  "main": "dist/commonjs/json-statham.js",
+  "typings": "dist/json-statham.d.ts",
   "scripts": {
     "test": "eslint index.js lib && mocha -b"
   },
@@ -36,11 +37,20 @@
     "mkdirp": "^0.5.1"
   },
   "jspm": {
+    "registry": "npm",
+    "main": "index",
+    "format": "amd",
+    "directories": {
+      "dist": "dist/amd"
+    },
+    "dependencies": {
+	  "extend": "^3.0.0"
+	},
     "map": {
       "fs": "@empty",
       "path": "@empty",
       "mkdirp": "@empty",
-      "./lib/filesystem.js": "@empty"
+      "FileSystem": "@empty"
     }
   }
 }
